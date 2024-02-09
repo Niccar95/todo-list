@@ -1,5 +1,6 @@
-import { MyTodoList, TodoList } from "../models/todolist";
+
 import "../scss/style.scss";
+import { MyTodoList, TodoList } from "./models/todolist";
 
 const listProperties = new TodoList("Leg day at the gym", "Monday", "18:00");
 const listProperties2 = new TodoList("Buy groceries", "Tuesday", "17:00");
@@ -60,6 +61,8 @@ function loadHtml() {
     localStorage.setItem("myListInfo", JSON.stringify(myOwnList)); 
    
   }
+
+
   
   addListButton.addEventListener("click", () => {
     const inputValue = taskInput.value.trim();
@@ -93,6 +96,8 @@ function loadHtml() {
     }
 
   });
+
+  
 
 //Hårdkodad lista. Allt fungerar fint. 
 
