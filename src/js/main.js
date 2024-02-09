@@ -1,6 +1,6 @@
 
 import "../scss/style.scss";
-import { MyTodoList, TodoList } from "./models/todolist";
+import { MyTodoList, TodoList } from "../js/models/todolist";
 
 const listProperties = new TodoList("Leg day at the gym", "Monday", "18:00");
 const listProperties2 = new TodoList("Buy groceries", "Tuesday", "17:00");
