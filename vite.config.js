@@ -1,3 +1,3 @@
 export default {
-  base: "/todo-list"
+  base: "/todo-list/"
 }
