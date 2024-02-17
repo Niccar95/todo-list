@@ -1,0 +1,157 @@
+@use "variables" as v;
+@use "mixins";
+@use "breakpoints";
+
+:root {
+  @include mixins.root;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  #app {
+    @include mixins.containers;
+    @include breakpoints.desktop() {
+      width: 60%;
+    }
+  
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+    }
+      
+
+    form {
+      border-radius: v.$borderRadius;
+      @include mixins.containers;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      gap: calc(v.$gap/2);
+
+      @include breakpoints.desktop() {
+        width: 60%;
+      }
+    
+      h3 {
+        text-align: center;
+      }
+    
+      input {
+        padding: 0.6em 0.6em;
+        border-radius: 0.5em;
+        width: 90%;
+        background-color: v.$darkColor;
+        border-style: solid;
+        color-scheme: dark;
+        transition: border-color 0.25s;
+        @include breakpoints.desktop() {
+          width: 70%;
+        }
+      
+    
+        &:hover {
+          border-color: v.$darkColor2;
+        }
+    
+        &:focus, &:focus-visible {
+          outline: 4px auto v.$lightColor2;
+        }
+      }
+    
+      .addListButton {
+        @include mixins.buttons;
+            
+        
+        &:hover {
+          border-color: v.$darkColor2;
+        }
+    
+        &:focus, &:focus-visible {
+          outline: 4px auto v.$lightColor2;
+        }
+      }
+
+      .removeTaskButton {
+        @include mixins.buttons;
+        background-color: crimson;
+
+        &:hover {
+          border-color: v.$darkColor2;
+        }
+    
+        &:focus, &:focus-visible {
+          outline: 4px auto v.$lightColor2;
+        }
+  
+      }
+
+    }
+  
+  ul {
+    font-size: v.$fontSize-default;
+    border: outset teal;
+    padding: v.$padding;
+    border-radius: v.$borderRadius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$gap;
+    width: 70%;
+
+    @include breakpoints.desktop() {
+      width: 60%;
+    }
+  
+    
+    .doneButton, .undoButton {
+      @include mixins.buttons;
+
+      @include breakpoints.desktop() {
+        width: 40%;
+      }
+    
+   
+    &:hover {
+      border-color: v.$darkColor2;
+    }
+
+    &:focus, &:focus-visible {
+      outline: 4px auto v.$lightColor2;
+    }
+
+    #notHidden {
+      color: crimson;
+    } 
+  }
+  
+  .removeButton {
+    @include mixins.buttons;
+    background-color: crimson;
+    color: whitesmoke;
+
+    @include breakpoints.desktop() {
+      width: 40%;
+    }
+  
+
+    &:hover {
+      border-color: v.$darkColor2;
+    }
+
+    &:focus, &:focus-visible {
+      outline: 4px auto v.$lightColor2;
+    }
+  }
+
+}
+}
+}
+}
+
+
+      
+  
