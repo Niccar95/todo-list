@@ -1,13 +1,21 @@
 @use "variables" as v;
 @use "mixins";
+@use "breakpoints";
 
 :root {
   @include mixins.root;
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   #app {
     @include mixins.containers;
+    @include breakpoints.desktop() {
+      width: 60%;
+    }
+  
 
     h1 {
       text-align: center;
@@ -16,18 +24,17 @@ body {
       
 
     form {
-
       border-radius: v.$borderRadius;
-      @include mixins.mobile {
-        @media screen and (min-width: 300px) and (max-width: 600px) {
-         align-items: center;
-        }
-      }
-    
-    @include mixins.containers;
+      @include mixins.containers;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      width: 90%;
       gap: calc(v.$gap/2);
+
+      @include breakpoints.desktop() {
+        width: 60%;
+      }
     
       h3 {
         text-align: center;
@@ -36,10 +43,15 @@ body {
       input {
         padding: 0.6em 0.6em;
         border-radius: 0.5em;
+        width: 90%;
         background-color: v.$darkColor;
         border-style: solid;
         color-scheme: dark;
         transition: border-color 0.25s;
+        @include breakpoints.desktop() {
+          width: 70%;
+        }
+      
     
         &:hover {
           border-color: v.$darkColor2;
@@ -52,18 +64,7 @@ body {
     
       .addListButton {
         @include mixins.buttons;
-    
-        @include mixins.mobile {
-            @media screen and (min-width: 300px) and (max-width: 600px) {
-                max-width: 8em;
-            }
-          }
-          
-            @include mixins.desktop {
-              @media screen and (max-width: 1200px) and (min-width: 600px) {
-                  width: 12em;
-              }
-            }
+            
         
         &:hover {
           border-color: v.$darkColor2;
@@ -97,28 +98,22 @@ body {
     border-radius: v.$borderRadius;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: v.$gap;
+    width: 70%;
 
-    @include mixins.mobile {
-      @media screen and (min-width: 300px) and (max-width: 600px) {
-       align-items: center;
-      }
+    @include breakpoints.desktop() {
+      width: 60%;
     }
+  
     
     .doneButton, .undoButton {
       @include mixins.buttons;
 
-      @include mixins.mobile {
-        @media screen and (min-width: 300px) and (max-width: 600px) {
-            max-width: 10em;
-        }
+      @include breakpoints.desktop() {
+        width: 40%;
       }
-      
-        @include mixins.desktop {
-          @media screen and (max-width: 1200px) and (min-width: 600px) {
-              width: 18em;
-          }
-        }
+    
    
     &:hover {
       border-color: v.$darkColor2;
@@ -137,6 +132,11 @@ body {
     @include mixins.buttons;
     background-color: crimson;
     color: whitesmoke;
+
+    @include breakpoints.desktop() {
+      width: 40%;
+    }
+  
 
     &:hover {
       border-color: v.$darkColor2;

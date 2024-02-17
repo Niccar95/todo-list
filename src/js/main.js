@@ -48,7 +48,7 @@ function loadHtml() {
   taskInput.setAttribute('required', '');
 
   const addListButton = document.createElement("button");
-  addListButton.innerHTML = "Add new task to the list";
+  addListButton.innerHTML = "Add new task";
   inputForm.appendChild(addListButton);
 
   addListButton.classList.add("addListButton");
@@ -118,8 +118,8 @@ myTodoList.forEach((myList, i) => {
   undoButton.classList.add("undoButton");
   undoButton.setAttribute("id", "notHidden");
   
-  doneButton.innerHTML = "Click to mark as done";
-  undoButton.innerHTML = "Click to undo changes";
+  doneButton.innerHTML = "Mark as done";
+  undoButton.innerHTML = "Undo changes";
   undoButton.style.color = "crimson";
   
   newListItem.innerHTML = myList.task +" - " + myList.day + " " + myList.time;
